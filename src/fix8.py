@@ -784,7 +784,8 @@ class Fix8():
                 if converted_list[index] == "RECORDING_END":
                     
                     #generate correct filename
-                    output_file_name = new_correction_file_name + "_" + str(file_number)
+                    dot_loc = new_correction_file_name.find('.')
+                    output_file_name = new_correction_file_name[:dot_loc] + "_" + str(file_number) + new_correction_file_name[dot_loc:]
                     file_number += 1
 
                     #generate output fixation and outpu as json file
